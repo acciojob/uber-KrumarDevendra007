@@ -9,7 +9,7 @@ public class TripBooking{
     private int tripBookingId;
     private String fromLocation;
     private String toLocation;
-    private int distance;
+    private int distanceInKm;
     private TripStatus status;
     private int bill;
     @ManyToOne
@@ -23,11 +23,11 @@ public class TripBooking{
     public TripBooking() {
     }
 
-    public TripBooking(int tripBookingId, String fromLocation, String toLocation, int distance, TripStatus status, int bill, Customer customer, Driver driver) {
+    public TripBooking(int tripBookingId, String fromLocation, String toLocation, int distanceInKm, TripStatus status, int bill, Customer customer, Driver driver) {
         this.tripBookingId = tripBookingId;
         this.fromLocation = fromLocation;
         this.toLocation = toLocation;
-        this.distance = distance;
+        this.distanceInKm = distanceInKm;
         this.status = status;
         this.bill = bill;
         this.customer = customer;
@@ -58,12 +58,12 @@ public class TripBooking{
         this.toLocation = toLocation;
     }
 
-    public int getDistance() {
-        return distance;
+    public int getDistanceInKm() {
+        return distanceInKm;
     }
 
-    public void setDistance(int distance) {
-        this.distance = distance;
+    public void setDistanceInKm(int distanceInKm) {
+        this.distanceInKm = distanceInKm;
     }
 
     public TripStatus getStatus() {
