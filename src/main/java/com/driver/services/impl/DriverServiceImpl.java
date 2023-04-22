@@ -36,15 +36,16 @@ public class DriverServiceImpl implements DriverService {
 	@Override
 	public void removeDriver(int driverId){
 		// Delete driver without using deleteById function
-		driverRepository3.deleteById(driverId);
+		Driver driver = driverRepository3.findById(driverId).get();
+		driverRepository3.delete(driver);
 
 	}
 
 	@Override
 	public void updateStatus(int driverId){
 		//Set the status of respective car to unavailable
-		Cab cab = new Cab();
-		cabRepository3.findById(driverId);
+		Cab cab = driverRepository3.findById(driverId).get().getCab();
 		cab.setAvailable(false);
+		cabRepository3.save(cab);
 	}
 }
