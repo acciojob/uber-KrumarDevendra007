@@ -52,7 +52,7 @@ public class CustomerServiceImpl implements CustomerService {
 		}
 
 		if(driver == null){
-			throw new Exception("No cab available!");
+			throw new Exception("No cab available!");  // No cab available!
 		}
 
 		TripBooking tripBooking = new TripBooking();

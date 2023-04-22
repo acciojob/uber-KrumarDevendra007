@@ -5,6 +5,7 @@ import javax.persistence.*;
 @Entity
 public class TripBooking{
 
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int tripBookingId;
     private String fromLocation;
