@@ -26,7 +26,7 @@ public class AdminController {
 
 	@PutMapping("/update")
 	public ResponseEntity<Admin> updateAdminPassword(@RequestParam Integer adminId, @RequestParam String password) throws Exception {
-		Admin updatedAdmin = adminService.updatePassword(adminId, password);
+		Admin updatedAdmin = adminService.updatePassword(adminId,password);
 		return new ResponseEntity<>(updatedAdmin, HttpStatus.OK);
 	}
 
@@ -37,7 +37,7 @@ public class AdminController {
 
 	@GetMapping("/listOfCustomers")
 	public List<Customer> listOfCustomers() {
-        List<Customer> listOfCustomers = adminService.getListOfCustomers();
+		List<Customer> listOfCustomers = adminService.getListOfCustomers();
 		return listOfCustomers;
 	}
 

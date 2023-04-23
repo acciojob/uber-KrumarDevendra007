@@ -5,17 +5,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Driver{
+@Table(name = "driver")
+public class Driver {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int driverId;
+
     private String mobile;
+
     private String password;
-    @OneToOne(mappedBy = "driver", cascade = CascadeType.ALL)
+
+    @OneToOne(mappedBy = "driver",cascade = CascadeType.ALL)
     Cab cab;
 
-    @OneToMany(mappedBy = "driver", cascade = CascadeType.ALL)
+    // driver parent of TripBooking
+    @OneToMany(mappedBy = "driver",cascade = CascadeType.ALL)
     List<TripBooking> tripBookingList = new ArrayList<>();
 
     public Driver() {
